@@ -1,0 +1,22 @@
+[project]
+name = "ocean_inna_table"
+version = "0.1.0"
+description = "A procedural 2D animation executable using Python"
+authors = [
+    {name = "Ellen Johnsen"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pytest (>=8.3.5,<9.0.0)",
+    "flake8 (>=7.2.0,<8.0.0)",
+    "mypy (>=1.15.0,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+my_program = "ocean_inna_table.main:main"
