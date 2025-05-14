@@ -1,0 +1,15 @@
+# This workflow handles logic on Pull requests
+# and pushes to main
+
+on:
+  pull_request:
+    branches:
+    - main
+  push:
+    branches:
+    - main
+
+jobs:
+  style-tests:
+    uses: ./.github/workflows/style_test.yml
+    secrets: inherit

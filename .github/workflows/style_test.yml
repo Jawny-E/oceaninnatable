@@ -1,0 +1,29 @@
+# This workflow handles all style-checks 
+# integrated in the project 
+on:
+  workflow_call:
+
+jobs:
+  style-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+            python-version: '3.13'
+
+      - name: Run image
+        uses: abatilo/actions-poetry@v3
+        with:
+            poetry-version: 2.0.1
+      
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Run ruff check
+        run: poetry run ruff check
+
+
