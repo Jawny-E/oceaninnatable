@@ -6,12 +6,13 @@ def main():
     screen = pg.display.set_mode((800, 600))
     pg.display.set_caption("Test Window")
     running = True
-    myCreature = Creature(screen)
-    
+    creature = Creature(screen)
     while running:
+        creature.drawCreature()
+        
         for event in pg.event.get():
-            myCreature.drawCreature()
             if event.type == pg.QUIT:
                 running = False
+        pg.display.flip()
 
     pg.quit()
